@@ -5,11 +5,23 @@ if (isset($_POST['valider'])){
             $utilisateur = trim(htmlspecialchars($_POST ["uname"]));
             $motdepass = trim(htmlspecialchars($_POST ["psw"]));
             $choix= trim(htmlspecialchars($_POST ["choix"]));
+
+            $ndoumbe=Database::getPDO();
+            var_dump($ndoumbe);
             
-            echo 'yes';
+            require '..//view/class/hosto.php';
+
+        
     }   
 }
 
+
+
+
+
+
+
+    
 
 
 

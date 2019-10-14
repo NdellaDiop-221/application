@@ -1,4 +1,12 @@
 <?php
+/*
+
+    require 'class/hosto.php';
+
+    $ndoumbe=Database::getPDO();
+    var_dump($ndoumbe);*/
+
+
 ?>
 
 
@@ -10,26 +18,28 @@
                 <title>login</title>
             
                 <meta name="viewport" content="width=device-width, initial-scale=1">
-                <link rel="stylesheet" href="view/css/login.css">
+                <link rel="stylesheet" href="css/login.css">
             </head>
             <body>
-<form methode="Get" action="controller/ttt.php">
+<form method="POST" action="../controller/ttt.php">
     <div class="imgcontainer">
-    <img src="view/img/rvhopital.jpg" alt="user" class="avatar">
+    <img src="img/rvhopital.jpg" alt="user" class="avatar">
         </div>
         <div class="container">
                 <label for="uname"><b>Email</b></label>
-                <input type="text" placeholder="votre mail" name="uname" required>
-
+                <input type="email" placeholder="votre mail" name="uname">
                 <label for="psw"><b>Mot de passe</b></label>
-                <input type="password" placeholder="votre mot de passe" name="psw" required>
+                <input type="password" placeholder="votre mot de passe" name="psw">
                     
 
-                <select>
-                        <option name="secre"value="taire" href=> Secretaire</option>
-                        <option ame="med"value="cin"> Medecin</option>
+                <select name="choix">
+                        <option selected >Role?</option>
+                        <option value="admin"> Administrateur</option>
+                        <option value="taire" href=> Secretaire</option>
+                        <option value="cin"> Medecin</option>
+                
                 </select> 
-                <button type="submit" name="valider" value="envoyer">Login</button>
+                <button type="submit" name="valider">Login</button>
                 
 
         

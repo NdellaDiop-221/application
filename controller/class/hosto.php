@@ -8,9 +8,8 @@ class Database
     public static function getPDO():PDO{
         if(self ::$pdoInstance == null){
             self ::$pdoInstance = new PDO('mysql:host=localhost;dbname=hosto;charset=utf8', 'root', '',[
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXECEPTION,
-
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
+                PDO::ATTR_ERRMODE =>PDO::ERRMODE_EXCEPTION
             ]);
         }
         return self::$pdoInstance;

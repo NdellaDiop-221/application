@@ -6,11 +6,12 @@ if (isset($_POST['valider'])){
             $motdepass = trim(htmlspecialchars($_POST ["psw"]));
             $choix= trim(htmlspecialchars($_POST ["choix"]));
 
+            require '.././class/hosto.php';
+            
             $ndoumbe=Database::getPDO();
             var_dump($ndoumbe);
             
-            require '..//view/class/hosto.php';
-
+echo 'THIS DRAGON';
         
     }   
 }

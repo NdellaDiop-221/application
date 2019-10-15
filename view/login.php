@@ -1,15 +1,3 @@
-<?php
-/*
-
-    require 'class/hosto.php';
-
-    $ndoumbe=Database::getPDO();
-    var_dump($ndoumbe);*/
-
-
-?>
-
-
 <!DOCTYPE html>
 
             <head>

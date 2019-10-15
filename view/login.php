@@ -21,10 +21,10 @@
                     
 
                 <select name="choix">
-                        <option selected >Role?</option>
-                        <option value="admin"> Administrateur</option>
-                        <option value="taire" href=> Secretaire</option>
-                        <option value="cin"> Medecin</option>
+                        <option value="" selected>Role?</option>
+                        <option value="administrateur"> Administrateur</option>
+                        <option value="secretaire" href=> Secretaire</option>
+                        <option value="medecin"> Medecin</option>
                 
                 </select> 
                 <button type="submit" name="valider">Login</button>

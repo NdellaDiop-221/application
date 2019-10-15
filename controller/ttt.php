@@ -1,47 +1,40 @@
 <?php
+    
+    if (isset($_POST['valider'])) {
+        if (!empty($_POST['uname']) && !empty($_POST['psw']) && !empty($_POST['choix'])) {
+            
+            $mail = $_POST['uname'];
+            $passw = $_POST['psw'];
+            $choix = $_POST['choix'];
 
-    require 'class/hosto.php';
-                
-    if (isset($_POST['valider'])){
+            require "class/hosto.php";
 
-        if (!empty($_POST['uname']) && !empty($_POST['psw']) && !empty($_POST['choix'])){ 
-            $utilisateur = trim(htmlspecialchars($_POST ["uname"]));
-            $motdepass = trim(htmlspecialchars($_POST ["psw"]));
-            $choix= trim(htmlspecialchars($_POST ["choix"]));
-        
-            $ndoumbe=Database::getPDO();
+            $connect = Database::getPDO();
 
-            $requete = $bdd->prepare('SELECT id FROM user WHERE email =:email AND mot_de_pass =:mot_de_pass');
+            $requete = $connect->prepare('SELECT id_user FROM user WHERE email = :mail AND mot_de_pass = :psw');
             $requete->execute(array(
-                'email' =>$utilisateur,
-                'mot_de_pass' =>$motdepass
-            ));
-            $result=$requete->fetch();
+                    'mail' => $mail,
+                    'psw' => $passw
+                ));
+            $exist = $requete->fetch();
 
-            if (!$result){
-                header("Location: ../view/logon.php");
+            if(!$exist){
+                header("Location: ../view/login.php");
+                exit;
             }
             else{
                 session_start();
 
-                $_SESSION['id'] = $result->{'id'};
-                $_SESSION['mail'] = $utilisateur;
+                $_SESSION['id'] = $exist->{'id_user'};
+                $_SESSION['mail'] = $mail;
 
-                if ($choix == "admin") {
-                    # code... vers interface admin
-                }
-                elseif ($choix == "taire") {
-                    # code... vers interface secretaire
-                }
-                else ($choix == "cin"){
-                    # code... vers interface medecins
+                if ($choix == "administrateur") {
+                    header("Location: ../view/administrateur/admin.php");
                 }
             }
         }
-        else{
-            # code... vers login
-        }
     }
     else{
-        header('Location: ../views/login');
+        header("Location: ../view/login.php");
+        exit;
     }

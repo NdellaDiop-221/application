@@ -1,5 +1,5 @@
 <?php
-require "../controller/class/secretaire.class.php";
+require "secretaire.class.php";
 
 $ndoumbe=new Secretaire();
 $ndoumbe->hydratation([

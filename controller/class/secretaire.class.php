@@ -26,7 +26,7 @@ public function hydratation(array $infos){
         
 }
 public function setemail($email) {
-    return $this->$_email;
+    $this->_email=$email;
 }
 
 
@@ -34,39 +34,38 @@ public function getpassword(){
     return $this->_password;
 }
 public function setpassword($password) {
-    return $this->$_password;
+    $this->_password=$password;
 }
 
 public function getnom(){
     return $this->_nom;
 }
 public function setnom($nom) {
-    return $this->$_nom;
+    $this->_nom=$nom;
 }
 
 
 public function getprenom(){
     return $this->_prenom;
-
 }
 public function setprenom($prenom) {
-    return $this->$_prenom;
+    $this->_prenom=$prenom;
 }
+
 
 public function getservice(){
     return $this->_service;
-
 }
 public function setservice($service) {
-    return $this->$_service;
+    $this->_service=$service;
 }
+
 
 public function getid(){
     return $this->_id;
-
 }
 public function setid($id) {
-    return $this->$_id;
+    $this->_id=$id;
 }
 
 public function getid_role(){
@@ -74,7 +73,7 @@ public function getid_role(){
 
 }
 public function setid_role($id_role) {
-    return $this->$_id_role;
+    $this->_id_role=$id_role;
 }
 }
 ?>

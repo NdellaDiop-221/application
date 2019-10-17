@@ -9,8 +9,8 @@
 
 <div class="topnav" id="myTopnav">
     <a href="#home" class="active">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
+    <a href="#news">Ajouter Medecin</a>
+    <a href="ajoutsecretaire.php">Ajouter Secretaire</a>
 <div class="dropdown">
     <button class="dropbtn">Dropdown 
     <i class="fa fa-caret-down"></i>
@@ -26,9 +26,14 @@
 </div>
 
 <div style="padding-left:16px">
-    <h2>Responsive Topnav with Dropdown</h2>
-    <p>Resize the browser window to see how it works.</p>
-    <p>Hover over the dropdown button to open the dropdown menu.</p>
+    <h2>Espace admin</h2>
+    <p>Vos taches</p>
+    <p></p>
+</div>
+
+<div class="header">
+        <h1>ADMINISTRATEUR</h1>
+        <p></p>
 </div>
 
 <script>

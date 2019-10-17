@@ -8,17 +8,17 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-    <a href="#home" class="active">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
+    <a href="#home" class="active">Acceuiil</a>
+    <a href="#news">Patient</a>
+    <a href="#contact">Rendez-vous</a>
 <div class="dropdown">
-    <button class="dropbtn">Dropdown 
+    <button class="dropbtn">Planning
     <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <a href="#">Jour</a>
+        <a href="#">Semaine</a>
+        <a href="#">Mois</a>
     </div>
 </div> 
     <a href="#about">About</a>
@@ -26,11 +26,34 @@
 </div>
 
 <div style="padding-left:16px">
-    <h2>Responsive Topnav with Dropdown</h2>
-    <p>Resize the browser window to see how it works.</p>
-    <p>Hover over the dropdown button to open the dropdown menu.</p>
+    <h2>Espace Medecin</h2>
+    <p>Bienvenu.</p>
+    <p>Passez en revu vos rendez-vous .</p>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class="header">
+        <h1>Header</h1>
+        <p>My supercool header</p>
 </div>
 
+<div class="content">
+        <h1>Content</h1>
+        <p>Some content blablabla, some content blablabla.</p>
+        <p>Some content blablabla, some content blablabla.</p>
+        <p>Some content blablabla, some content blablabla.</p>
+</div>
+
+</body>
+</html>
 <script>
 //php 
 /*function myFunction() {

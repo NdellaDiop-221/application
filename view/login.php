@@ -14,18 +14,15 @@
     <img src="img/rvhopital.jpg" alt="user" class="avatar">
         </div>
         <div class="container">
-                <label for="uname"><b>Email</b></label>
-                <input type="email" placeholder="votre mail" name="uname">
+                <label for="uname"><b>Email</b></label><br>
+                <input type="email" placeholder="votre email" name="uname"><br>
                 <label for="psw"><b>Mot de passe</b></label>
                 <input type="password" placeholder="votre mot de passe" name="psw">
-                    
-
                 <select name="choix">
                         <option value="" selected>Role?</option>
                         <option value="administrateur"> Administrateur</option>
                         <option value="secretaire" href=> Secretaire</option>
                         <option value="medecin"> Medecin</option>
-                
                 </select> 
                 <button type="submit" name="valider">Login</button>
                 

@@ -11,7 +11,7 @@
 
             $connect = Database::getPDO();
 
-            $requete = $connect->prepare('SELECT id_user FROM user WHERE email = :mail AND mot_de_pass = :psw');
+            $requete = $connect->prepare('SELECT id FROM user WHERE email = :mail AND mot_de_pass = :psw');
             $requete->execute(array(
                     'mail' => $mail,
                     'psw' => $passw
@@ -25,11 +25,17 @@
             else{
                 session_start();
 
-                $_SESSION['id'] = $exist->{'id_user'};
+                $_SESSION['id'] = $exist->{'id'};
                 $_SESSION['mail'] = $mail;
 
                 if ($choix == "administrateur") {
                     header("Location: ../view/administrateur/admin.php");
+                }
+                if ($choix == "secretaire") {
+                    header("Location: ../view/secretaire/secretaire.php");
+                }
+                if ($choix == "medecin") {
+                    header("Location: ../view/medecin/medecin.php");
                 }
             }
         }

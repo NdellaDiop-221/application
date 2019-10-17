@@ -11,6 +11,16 @@ class Secretaire{
     private $_id_role=('2');
 
 
+public function hydratation(array $infos){
+    foreach ($infos as $key=>$value){
+        $method='set'.($key);
+        if(method_exists($this,$method)){
+            $this->$method($value);
+        }
+    }
+
+}
+
     public function getemail(){
         return $this->_email;
         

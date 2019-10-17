@@ -2,18 +2,15 @@
 require "controller/class/hosto.php";
 
 $ndoumbe=new Secretaire();
-        $ndoumbe->setnom("Diop");
-        $ndoumbe->setprenom("Ndoumbe");
-        $ndoumbe->setemail("jobn@gmail.com");
-        $ndoumbe->setpassword("job03");
-        $ndoumbe->setid_role("2");
+$ndoumbe->hydratation([
+"nom"=>"Diop",
+"prenom"=> "Ndoumbe",
+"email"=>"ynjop@hotmail.com",
+"mot_de_pass"=> 'jop01'
 
+)];
 
-
-$aziz=new SecretaireAction();
-        $aziz-> add ($ndoumbe);
-
-        
+echo $ndoumbe->getnom();
 
 ?>
 

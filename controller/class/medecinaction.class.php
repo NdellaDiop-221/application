@@ -1,15 +1,15 @@
 <?php
-    class MedecinManager extends Database
+    class Medecinaction extends Database
     {
         public function add(Medecin $objet){
             $pdo = Database::getPDO();
 
-            $sql1 = "INSERT INTO users(nom, prenom, email, mot_de_passe, id_role) VALUES(:nom, :prenom, :mail, :passw, :id_role)";
+            $sql1 = "INSERT INTO users(nom, prenom, mail, pass, id_role) VALUES(:nom, :prenom, :mail, :passw, :id_role)";
             $req = $pdo->prepare($sql1);
-            $req->bindValue(':nom', $objet->getnom());
-            $req->bindValue(':prenom', $objet->getprenom());
-            $req->bindValue(':mail', $objet->getmail());
-            $req->bindValue(':passw', $objet->getpass());
+            $req->bindValue(':nom', $objet->getNom());
+            $req->bindValue(':prenom', $objet->getPrenom());
+            $req->bindValue(':mail', $objet->getMail());
+            $req->bindValue(':passw', $objet->getPass());
             $req->bindValue(':id_role', $objet->getId_Role());
             $req->execute();
 
@@ -26,13 +26,13 @@
             $pdo = Database::getPDO();
             $objet->setId();
             
-            $req = $pdo->prepare("UPDATE users SET nom = :nom, prenom = :prenom, mail = :mail, pass = :mot_de_passe, id_role = :id_role WHERE id = :id");
+            $req = $pdo->prepare("UPDATE users SET nom = :nom, prenom = :prenom, mail = :mail, pass = :pass, id_role = :id_role WHERE id = :id");
 
             $req->bindValue(':id', $objet->getId());
-            $req->bindValue(':nom', $objet->getnom());
-            $req->bindValue(':prenom', $objet->getprenom());
-            $req->bindValue(':mail', $objet->getmail());
-            $req->bindValue(':pass', $objet->getpass());
+            $req->bindValue(':nom', $objet->getNom());
+            $req->bindValue(':prenom', $objet->getPrenom());
+            $req->bindValue(':mail', $objet->getMail());
+            $req->bindValue(':pass', $objet->getPass());
             $req->bindValue(':id_role', $objet->getId_Role());
 
             $req->execute();

@@ -64,8 +64,13 @@ public function setservice($service) {
 public function getid(){
     return $this->_id;
 }
-public function setid($id) {
-    $this->_id=$id;
+public function setId(){
+    $bd = Database::getPDO();
+    $req = $bd->prepare("SELECT id FROM user WHERE email = :mail");
+    $req->bindValue(":mail", $this->getMail());
+    $req->execute();
+    $id = $req->fetch();
+    $this->_id = $id->{'id'};
 }
 
 public function getid_role(){

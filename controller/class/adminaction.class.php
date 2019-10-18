@@ -15,12 +15,6 @@
             $requeteprepa->bindValue(':id_role', $objet->getid_role());
             $requeteprepa->execute();
 
-            $objet->setId();
-            $sql2 = "INSERT INTO secretaires(id, id_services) VALUES(:id, :services)";
-            $requeteprepa2 = $pdo->prepare($sql2);
-            $requeteprepa2->bindValue(':id', $objet->getId());
-            $requeteprepa2->bindValue(':services', $objet->getService());
-            $requeteprepa2->execute();
         }
 
         public function update(Secretaire $objet){
@@ -38,12 +32,6 @@
 
             $requeteprepa->execute();
 
-            $requeteprepa2 = $pdo->prepare("UPDATE secretaires SET id_services = :services WHERE id = :id");
-
-            $requeteprepa2->bindValue(':id', $objet->getId());
-            $requeteprepa2->bindValue(':services', $objet->getService());
-
-            $requeteprepa2->execute();
         }
         
         public function delete(Secretaire $objet){
@@ -53,8 +41,5 @@
             $requeteprepa->bindValue(":id", $objet->getId());
             $requeteprepa->execute();
 
-            $requeteprepa2 = $pdo->prepare('DELETE FROM user WHERE id= :id');
-            $requeteprepa2->bindValue(":id", $objet->getId());
-            $requeteprepa2->execute();
         }
     }

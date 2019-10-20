@@ -10,10 +10,9 @@ $ndoumbe->hydratation([
 
 ]);
 
-var_dump($ndoumbe->getnom());
+
 
 ?>
 
 
 
-<

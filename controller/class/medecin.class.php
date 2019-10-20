@@ -66,7 +66,7 @@
         }
 
         /* HYDRATATION */
-        public function hydrate(array $donnees){
+        public function hydratation(array $donnees){
             foreach ($donnees as $key => $value) {
                 $method = 'set'.ucfirst($key);
                 if (method_exists($this, $method)) {

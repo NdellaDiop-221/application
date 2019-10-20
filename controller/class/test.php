@@ -1,15 +1,20 @@
 <?php
+require "hosto.php";
 require "secretaire.class.php";
+require "secretaireaction.class.php";
 
 $ndoumbe=new Secretaire();
 $ndoumbe->hydratation([
-"nom"=>"Diop",
-"prenom"=> "Ndoumbe",
-"email"=>"ynjop@hotmail.com",
-"mot_de_pass"=> 'jop01'
+    "nom"=>"Diop",
+    "prenom"=> "Ndoumbe",
+    "mail"=>"ynjop@hotmail.com",
+    "pass"=> 'jop01',
+    "service" => "3"
 
 ]);
 
-var_dump($ndoumbe->getnom());
+$aziz = new SecretaireAction();
+
+$aziz->add($ndoumbe);
 
 ?>

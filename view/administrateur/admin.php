@@ -1,18 +1,18 @@
 <?php
-$connect = Database::getPDO();
+require "../../controller/class/hosto.php"; /* ici */
 
+$connect = Database::getPDO();
+$table = array(); /* ici */
 $listeSecretaire= array();
-$req = $connect->query("SELECT * FROM user WHERE id_role = 2");
+$req = $connect->query("SELECT * FROM user WHERE id = 2");
 
 while ($donnees=$req->fetch()){
-    $table[]= $donnees;
-
+$table[]= $donnees;
 }
-for ($i = 0; $i<sizeof($table); $i++){
-$requet = $connect->query("SELECT *service FROM services, secretaires WHERE services.id = secretaires.id_services AND secretaire_id " .$table[$i]->{'id'});
+for ($i = 0; $i < sizeof($table); $i++){
+$requet = $connect->query("SELECT service FROM services,secretaires WHERE services.id_services = secretaires.id_services AND secretaires.id =".$table[$i]->{'id'}); /* ici */
 $serv=$requet->fetch();
 $servicesSecretaire[$i]=$serv;
-
 }
 
 ?>
@@ -95,9 +95,9 @@ for ($i = 0; $i<sizeof($table); $i++){
         
             <td><?php echo $table[$i]->{'nom'};?> </td>
             <td><?php echo $table[$i]->{'prenom'};?></td>
-            <td> <?php echo $table[$i]->{'email'};?></td>
-            <td> <?php echo $table[$i]->{'mot_de_pass'};?></td>
-            <td> <?php echo $table[$i]->{'service'};?></td>
+            <td> <?php echo $table[$i]->{'email'};?></td> <!-- ici -->
+            <td> <?php echo $table[$i]->{'mot_de_pass'};?></td> <!-- ici -->
+            <td><?php echo $servicesSecretaire[$i]->{'service'}; ?></td> <!-- ici -->
             <td class="btn"> <button type="submit" name="ajout">modifier</button>
             <button type="submit" name="ajout">supprimer</button></td>
         
@@ -106,7 +106,9 @@ for ($i = 0; $i<sizeof($table); $i++){
 
 }
 ?>
+
 </table><br>
 <button type="submit" name="ajout">Ajouter</button>
 </body>
 </html>
+

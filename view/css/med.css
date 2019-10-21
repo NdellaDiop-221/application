@@ -26,7 +26,7 @@ body {margin:0;font-family:Arial}
     }
     
     li a:hover:not(.active) {
-        background-color: #1abc9c;
+        background-color: #4289c4;
     }
     
     .active {
@@ -42,11 +42,11 @@ body {
 .header {
     padding: 20px;
     text-align: right;
-    background: #0a0a0a;
+    background: #1c1d1d;
     color: rgb(255, 251, 251);
     font-size: 30px;
     filter: alpha(opacity=30);  /*For IE8 and earlier */
-    background-image: url('../img/4.jpg');
+    background-image: url('../img/3.jpg');
     background-repeat: no-repeat;
 }
 
@@ -56,7 +56,7 @@ body {
 .gauche{
 padding:20px;
 margin :2%;
-background-color: #1abc9c;
+background-color: #4289c4;
 padding-left:10px;
 margin-top: 30px;
 margin-left: 5px;
@@ -100,8 +100,8 @@ table {
         border: 1px solid rgb(248, 162, 2);
         text-align: left;
         padding: 8px;
-        background-image: url('../img/4.jpg');
-        color:#1abc9c;
+        color:#4289c4;
+        background-color: black;
     }
     
     tr:nth-child(even) {

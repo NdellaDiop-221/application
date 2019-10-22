@@ -111,6 +111,10 @@ for ($i = 0; $i<sizeof($table); $i++){
 }
 ?>
 </table><br>
-<button type="submit" name="ajout">Ajouter</button>
+<div>
+        <ul>
+        <li> <a href="ajout.php">Ajouter</a></li>
+        </ul>
+</div><br> <br>
 </body>
 </html>

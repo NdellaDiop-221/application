@@ -1,48 +1,33 @@
 <?php
 
-/*require "../view/class/hosto.php";
-
-$connect = Database::getPDO();
-
-    function adduser( $non, $prenom, $email,$mot_de_pass,$service){
-
-$sql= "INSERT INTO user Values (NULL,'$non','$prenom','$email','$mot_de_pass','$service')";
-
-return self::$pdoInstance;
-    }*/
-
 require "../view/class/hosto.php";
 
+require "class/hosto.php";
+require "class/secretaire.class.php";
+require "class/secretaireaction.class.php";
+
 if (isset($_POST['ajouter'])) {
-if (!empty($_POST['nm']) && !empty($_POST['prn'])&& !empty($_POST['eml']) && !empty($_POST['mdp']) && !empty($_POST['srvc'])) {
+    if (!empty($_POST['nm']) && !empty($_POST['prn']) && !empty($_POST['eml']) && !empty($_POST['mdp']) && !empty($_POST['srvc'])) {
+        
+        $nom = $_POST['nm'];
+        $prenom = $_POST['prn'];
+        $mail = $_POST['eml'];
+        $mdpass = $_POST['mdp'];
+        $srvic = $_POST['srvc'];
+        
+        $amy = new Secretaire();
+        $amy->hydratation([
+            "nom" => $nom,
+            "prenom" => $prenom,
+            "mail" => $mail,
+            "pass" => $mdpass,
+            "service" => $srvic
+            ]);
+        
+        $moussa=new SecretaireAction();
+        
+        $moussa->add($amy);
 
-
-$nom = $_POST['nm'];
-$prenom = $_POST['prn'];
-$mail = $_POST['eml'];
-$mdpass = $_POST['mdp'];
-$srvic = $_POST['srvc'];
-//echo'yes';
-//$connect = Database::getPDO();
-/*$requete = $connect->prepare('INSERT INTO user WHERE nom = :nm AND prenom= :prn AND mail = :eml AND mdpass = :mdp AND servic = :srvc');
-$requete->execute(array(
-'email' => $mail,
-'mot_de_pass' => $passw,));
-$result = $requete->fetch();*/
-}
+        header("Location: ../view/administrateur/admin.php");
     }
-
-$amy=new Secretaire();
-$amy->hydratation([
-"nom"=>$nom,
-"prenom"=> $prenom,
-"email"=>$mail,
-"mot_de_pass"=> $mdpass,
-"service"=>$srvic
-
-]);
-
-$moussa=new Admin();
-
-
-$moussa->add($amy);
+}

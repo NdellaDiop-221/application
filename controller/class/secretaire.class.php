@@ -36,7 +36,7 @@
         /* SETTERS */
         public function setId(){
             $bd = Database::getPDO();
-            $req = $bd->prepare("SELECT id FROM users WHERE mail = :mail");
+            $req = $bd->prepare("SELECT id FROM user WHERE email = :mail");
             $req->bindValue(":mail", $this->getMail());
             $req->execute();
             $id = $req->fetch();

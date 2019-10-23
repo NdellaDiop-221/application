@@ -1,27 +1,23 @@
 <?php
-require "secretaireaction.php";
 require "hosto.php";
+require "secretaireaction.class.php";
 require "secretaire.class.php";
+
+
 
 $ndoumbe=new Secretaire();
 $ndoumbe->hydratation([
-"nom"=>"Diop",
-"prenom"=> "Ndoumbe",
-"email"=>"ynjop@hotmail.com",
-"mot_de_pass"=> 'jop01',
-"service"=>'Urgence'
+"nom"=>"Sy",
+"prenom"=> "Assane",
+"mail"=>"syass@gmail.com",
+"pass"=> 'sy1234',
+"service"=>2
 
 ]);
 
-$azi=new Admin();
-$aziz->hydratation([
-"nom"=>"Dionne",
-"prenom"=> "Abdou",
-"email"=>"dou@hotmail.com",
-"mot_de_pass"=> 'dione05'
+$aziz=new SecretaireAction();
 
-]);
 
-$aziz-> add ($ndoumbe);
+$aziz->add($ndoumbe);
 
 ?>

@@ -1,8 +1,8 @@
 <?php
-require "../../controller/class/hosto.php"; /* ici */
+require "../../controller/class/hosto.php"; /* ici*/ 
 
 $connect = Database::getPDO();
-$table = array(); /* ici */
+$table = array(); /* ici*/ 
 $ServiceSecretaire = array();
 $listeSecretaire= array();
 $req = $connect->query("SELECT * FROM user WHERE id_role = 2");
@@ -11,10 +11,9 @@ while ($donnees=$req->fetch()){
     $table[]= $donnees;
 }
 for ($i=0; $i < sizeof($table); $i++) {
-    $requete = $connect->query("SELECT service FROM services,secretaires WHERE services.id_services = secretaires.id_services AND secretaires.id=".$table[$i]->{'id'});
-    $serv = $requete->fetch();
+    $req2 = $connect->query("SELECT service FROM services,secretaires WHERE services.id_services = secretaires.id_services AND secretaires.id=".$table[$i]->{'id'});
+    $serv = $req2->fetch();
     $ServiceSecretaire[$i] = $serv;
-    
 }
 
 ?>

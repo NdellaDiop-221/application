@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION ['id'])) {
+header('Location:../login.php');
+exit; 
+}
+
+if ($_SESSION['role']!=2){
+
+    header("Location:../login.php");
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,13 +24,13 @@
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <body>
-
+<!--header-->
 <ul>
     <li><a class="active" href="#">Acceuil</a></li>
-    <li><a href="#">Patients</a></li>
-    <li><a href="#contact">Medecins</a></li>
+    <li><a href="#patient">Patients</a></li>
+    <li><a href="#medecin">Medecins</a></li>
     <li><a href="#Rende-vous">Rendez-vous</a></li>
-    <li style="float:right"><a href="#about">About</a></li>
+    <li style="float:right"><a href="../deconnexion.php">Deconnexion</a></li>
 </ul>
 
 <div style="padding-left:16px">
@@ -23,86 +40,69 @@
 <div class="header">
         <h1> <marquee>Secretaire </marquee></h1>
         <p>Gestion</p>
+
+<!--action-->
+
 </div>
-    <div class=bloc>
-        <div class="blocgauche">
-                    <div class="gauche">
-                            <h1>Patients</h1>
-                            <p><i class='fas fa-user-friends' style='font-size:48px;color:red'></i></p>
-                    </div>
+    <div class="action"> 
+            <div class="blocgauche">
+                        <div id="patient" class="gauche">
+                                <h1>Patients</h1>
+                                <p><i class='fas fa-user-friends' style='font-size:48px;color:red'></i></p>
+                                <li><a href="#Rende-vous">consulter</a></li>
+                        </div>
+                        <div class= "milieu">
+                                <h1>Rendez-vous</h1>
+                                <p> <i class='far fa-calendar-alt' style='font-size:50px;color:red;position:center'></i></p>
+                        </div>
 
-                    <div class="gauche">
-                            <h1>Medecin</h1>
-                            <p><i class='fas fa-user-md' style='font-size:48px;color:red'></i></p>
-                    </div>
-
-        </div>
-        
-        <div class= milieu>
-                            <h1>Rendez-vous</h1>
-                            <p>My supercool header</p>
-                            <i class='far fa-calendar-alt' style='font-size:50px;color:red;position:center'></i>
-        </div>
-
-        <div class="droite">
-                    <div class="gauche">
-                            <h1>Information</h1>
-                            <p>   <i class='far fa-address-card' style='font-size:48px;color:red'></i></p>
+                        <div id="medecin" class="gauche">
+                                <h1>Medecin</h1>
+                                <p><i class='fas fa-user-md' style='font-size:48px;color:red'></i></p>
+                        </div>
                         
-                    </div>
-
-                    <div class="gauche">
-                            <h1>Commentaires</h1>
-                            <p><i class='far fa-comments' style='font-size:48px;color:red'></i></p>
-                    </div>
-
-        </div>
-    </div><br> <br>
-    <table>
+                
+            </div>
+        
+    </div>
+    </div>
+<!--tableau-->
+        <table>
         <tr>
         
             <th>Nom</th>
             <th>Prenom</th>
             <th>Email</th>
-            <th>mot de pass</th>
-            <th>action</th>
+            <th>Mot de pass</th>
+            <th>Service</th>
+            <th>Action</th>
         
         </tr>
-        
-    
+        <?php
+
+for ($i = 0; $i<sizeof($table); $i++){
+    ?> <!--recuperer des information dans un tablau-->
         <tr>
         
-            <td> Diop</td>
-            <td>sokhna</td>
-            <td>sodiop@gmail.com</td>
-            <td>diopso4</td>
-           <td class="btn"> <button type="submit" name="ajout">modifier</button>
-            <button type="submit" name="ajout">supprimer</button></td>
+            <td><?php echo $table[$i]->{'nom'};?> </td>
+            <td><?php echo $table[$i]->{'prenom'};?></td>
+            <td> <?php echo $table[$i]->{'email'};?></td> <!-- ici -->
+            <td> <?php echo $table[$i]->{'mot_de_pass'};?></td> <!-- ici -->
+            <td><?php echo $ServiceSecretaire[$i]->{'service'}; ?></td> <!-- ici -->
+            <td class="btn">
+                <button type="button" name="ajout" >modifier</button>
+                <button type="button" name="ajout" value='<?php $table[$i]->{'email'}?>'>supprimer</button>
+            </td>
         
-        </tr>
-        
-            <td>Diam</td>
-            <td>Ablaye Mody</td>
-            <td>diam@gmail.com</td>
-            <td>diam05</td>
-            <td class="btn"> <button type="submit" name="ajout">modifier</button>
-            <button type="submit" name="ajout">supprimer</button></td>
-        
-            
-        <tr>
-        </tr>
-        <tr>
-        
-            <td>Toure</td>
-            <td>Ousman</td>
-            <td>oustoure@gmail.com</td>
-            <td>toureouz</td>
-            <td class="class="btn"> <button type="submit" name="ajout">modifier</button>
-            <button type="submit" name="ajout">supprimer</button></td>
-        
-        </tr>
-    
+</tr>
+<?php
+
+}
+?>
 </table><br>
+
+        <br> <br>
+    
 <button type="submit" name="ajout">Ajouter</button>
 </body>
 </html>

@@ -7,10 +7,10 @@ require "secretaire.class.php";
 
 $ndoumbe=new Secretaire();
 $ndoumbe->hydratation([
-"nom"=>"Sy",
-"prenom"=> "Assane",
-"mail"=>"syass@gmail.com",
-"pass"=> 'sy1234',
+"nom"=>"Diop",
+"prenom"=> "Ndoumbe",
+"mail"=>"ndou@gmail.com",
+"pass"=> 'ynj221',
 "service"=>2
 
 ]);

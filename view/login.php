@@ -1,3 +1,33 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION['id'])){
+
+switch($_SESSION['role']){
+
+    case 1: 
+    header("Location:administrateur/admin.php");
+    break;
+
+    case 2: 
+    header("Location:secretaire/secretaire.php");
+    break;
+    
+    case 3:
+    header("Location:medecin/medecin.php");
+    break;
+
+    default: 
+    header("Location:.");
+
+}
+
+exit;
+}
+
+
+?>
 <!DOCTYPE html>
 
             <head>

@@ -18,6 +18,7 @@ exit;
 else{
 session_start();
 $_SESSION['id'] = $result->{'id'};
+$_SESSION['role'] = $result->{'id_role'};
 $role = $result->{'id_role'};
 switch ($role) {
 case 1:

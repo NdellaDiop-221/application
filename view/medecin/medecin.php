@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+if (!isset($_SESSION ['id'])) {
+header('Location:../login.php');
+exit; 
+}
+
+if ($_SESSION['role']!=3){
+
+    header("Location:../login.php");
+}
+
+?>
+
+
+
+
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +30,7 @@
     <li><a href="#">Patients</a></li>
     <li><a href="#contact">Medecins</a></li>
     <li><a href="#Rende-vous">Rendez-vous</a></li>
-    <li style="float:right"><a href="#about">About</a></li>
+    <li style="float:right"><a href="../deconnexion.php">Deconnexion</a></li>
 </ul>
 
 <div style="padding-left:16px">

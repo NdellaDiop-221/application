@@ -10,7 +10,9 @@ $ndoumbe->hydratation([
 
 ]);
 
+$aziz= new SecretaireAction();
 
+$aziz->add$ndoumbe
 
 ?>
 

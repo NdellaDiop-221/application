@@ -47,7 +47,11 @@ if ($_SESSION['role']!=3){
                             <h1>Patients</h1>
                             <p><i class='fas fa-user-friends' style='font-size:48px;color:red'></i></p>
                     </div>
-
+        <div class= milieu>
+                            <h1>Rendez-vous</h1>
+                            <p>My supercool header</p>
+                            <i class='far fa-calendar-alt' style='font-size:50px;color:red;position:center'></i>
+        </div>
                     <div class="gauche">
                             <h1>Plannig</h1>
                             <p><i class='fas fa-user-md' style='font-size:48px;color:red'></i></p>
@@ -55,25 +59,9 @@ if ($_SESSION['role']!=3){
 
         </div>
         
-        <div class= milieu>
-                            <h1>Rendez-vous</h1>
-                            <p>My supercool header</p>
-                            <i class='far fa-calendar-alt' style='font-size:50px;color:red;position:center'></i>
-        </div>
+       
 
-        <div class="droite">
-                    <div class="gauche">
-                            <h1>Specialite</h1>
-                            <p>   <i class='far fa-address-card' style='font-size:48px;color:red'></i></p>
-                        
-                    </div>
-
-                    <div class="gauche">
-                            <h1>Commentaires</h1>
-                            <p><i class='far fa-comments' style='font-size:48px;color:red'></i></p>
-                    </div>
-
-        </div>
+        
     </div><br> <br>
     <table>
         <tr>
@@ -81,45 +69,34 @@ if ($_SESSION['role']!=3){
             <th>Nom</th>
             <th>Prenom</th>
             <th>Email</th>
-            <th>mot de pass</th>
-            <th>action</th>
+            <th>Mot de pass</th>
+            <th>Service</th>
+            <th>Action</th>
         
         </tr>
-        
-    
+        <?php
+
+for ($i = 0; $i<sizeof($table); $i++){
+    ?> <!--recuperer des information dans un tablau-->
         <tr>
         
-            <td> Diop</td>
-            <td>sokhna</td>
-            <td>sodiop@gmail.com</td>
-            <td>diopso4</td>
-           <td class="btn"> <button type="submit" name="ajout">modifier</button>
-            <button type="submit" name="ajout">supprimer</button></td>
+            <td><?php echo $table[$i]->{'nom'};?> </td>
+            <td><?php echo $table[$i]->{'prenom'};?></td>
+            <td> <?php echo $table[$i]->{'email'};?></td> <!-- ici -->
+            <td> <?php echo $table[$i]->{'mot_de_pass'};?></td> <!-- ici -->
+            <td><?php echo $ServiceSecretaire[$i]->{'service'}; ?></td> <!-- ici -->
+            <td class="btn">
+                <button type="button" name="ajout" >modifier</button>
+                <button type="button" name="ajout" value='<?php $table[$i]->{'email'}?>'>supprimer</button>
+            </td>
         
-        </tr>
-        
-            <td>Diam</td>
-            <td>Ablaye Mody</td>
-            <td>diam@gmail.com</td>
-            <td>diam05</td>
-            <td class="btn"> <button type="submit" name="ajout">modifier</button>
-            <button type="submit" name="ajout">supprimer</button></td>
-        
-            
-        <tr>
-        </tr>
-        <tr>
-        
-            <td>Toure</td>
-            <td>Ousman</td>
-            <td>oustoure@gmail.com</td>
-            <td>toureouz</td>
-            <td class="class="btn"> <button type="submit" name="ajout">modifier</button>
-            <button type="submit" name="ajout">supprimer</button></td>
-        
-        </tr>
-    
+</tr>
+<?php
+
+}
+?>
 </table><br>
+
 <button type="submit" name="ajout">Ajouter</button>
 </body>
 </html>

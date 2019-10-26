@@ -62,39 +62,39 @@ if ($_SESSION['role']!=2){
                         </div>
                         
                 
-            </div>
+        </div>
         
-    </div>
-    </div>
+        </div>
+        </div>
 <!--tableau-->
         <table>
         <tr>
         
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>Email</th>
-            <th>Mot de pass</th>
-            <th>Service</th>
-            <th>Action</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Email</th>
+                <th>Mot de pass</th>
+                <th>Service</th>
+                <th>Action</th>
         
         </tr>
         <?php
 
 for ($i = 0; $i<sizeof($table); $i++){
-    ?> <!--recuperer des information dans un tablau-->
+?> <!--recuperer des information dans un tablau-->
         <tr>
-        
-            <td><?php echo $table[$i]->{'nom'};?> </td>
-            <td><?php echo $table[$i]->{'prenom'};?></td>
-            <td> <?php echo $table[$i]->{'email'};?></td> <!-- ici -->
-            <td> <?php echo $table[$i]->{'mot_de_pass'};?></td> <!-- ici -->
-            <td><?php echo $ServiceSecretaire[$i]->{'service'}; ?></td> <!-- ici -->
-            <td class="btn">
-                <button type="button" name="ajout" >modifier</button>
-                <button type="button" name="ajout" value='<?php $table[$i]->{'email'}?>'>supprimer</button>
-            </td>
-        
-</tr>
+                
+                <td><?php echo $table[$i]->{'nom'};?> </td>
+                <td><?php echo $table[$i]->{'prenom'};?></td>
+                <td> <?php echo $table[$i]->{'email'};?></td> <!-- ici -->
+                <td> <?php echo $table[$i]->{'mot_de_pass'};?></td> <!-- ici -->
+                <td><?php echo $ServiceSecretaire[$i]->{'service'}; ?></td> <!-- ici -->
+                <td class="btn">
+                        <button type="button" name="ajout" >modifier</button>
+                        <button type="button" name="ajout" value='<?php $table[$i]->{'email'}?>'>supprimer</button>
+                </td>
+                
+        </tr>
 <?php
 
 }

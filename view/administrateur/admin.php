@@ -120,7 +120,7 @@ for ($i = 0; $i<sizeof($table); $i++){
             <td><?php echo $ServiceSecretaire[$i]->{'service'}; ?></td> <!-- ici -->
             <td class="btn">
                 <button type="button" name="ajout" >modifier</button>
-                <button class="btn" data-name="<?php echo $table[$i]->{'prenom'}; ?>" data-email="<?php echo $table[$i]->{'mail'} ?>" class="openConfirm" href="" data-toggle="modal" data-target="#confirmation"type="button">supprimer</button>
+                <button class="btn" data-name="<?php echo $table[$i]->{'prenom'}; ?>" data-email="<?php echo $table[$i]->{'email'} ?>" href="" data-toggle="modal" data-target="#confirmation"type="button">supprimer</button>
             </td>
         
 </tr>

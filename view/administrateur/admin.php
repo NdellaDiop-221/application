@@ -157,7 +157,7 @@ for ($i = 0; $i<sizeof($table); $i++){
         </div>
     </div>
     </div>
-$(document)
+<script src="../fichier.js"></script>
 
 
 </body>

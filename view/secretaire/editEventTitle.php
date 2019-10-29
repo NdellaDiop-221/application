@@ -1,6 +1,6 @@
 <?php
 
-$bdd = new PDO('mysql:host=localhost;dbname=rendezVous;charset=utf8', 'root', 'root');
+$bdd = new PDO('mysql:host=localhost;dbname=rendezVous;charset=utf8', 'root', '');
 
 if (isset($_POST['delete']) && isset($_POST['id'])){
 	
@@ -19,13 +19,14 @@ if (isset($_POST['delete']) && isset($_POST['id'])){
 	 die ('Erreur execute');
 	}
 	
-}elseif (isset($_POST['title']) && isset($_POST['color']) && isset($_POST['id'])){
+}elseif (isset($_POST['patient']) && isset($_POST['medecin']) && isset($_POST['color']) && isset($_POST['id'])){
 	
 	$id = $_POST['id'];
-	$title = $_POST['title'];
+	$patient = $_POST['patient'];
+	$medecin = $_POST['medecin'];
 	$color = $_POST['color'];
 	
-	$sql = "UPDATE rendezVous SET  title = '$title', color = '$color' WHERE id = $id ";
+	$sql = "UPDATE rendezVous SET  patient = '$patient', medecin = '$medecin', color = '$color' WHERE id = $id ";
 
 	
 	$query = $bdd->prepare( $sql );

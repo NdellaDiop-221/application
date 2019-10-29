@@ -30,7 +30,7 @@
 </ul>
 
 <div class=calendar>
-    <?php require  '../../controller/fullcalendar/rvcalendar.php'?>
+    <?php require  'rvcalendar.php'?>
 </div>
 
 </body>

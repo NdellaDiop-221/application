@@ -29,7 +29,7 @@ if ($_SESSION['role']!=2){
     <li><a class="active" href="#">Acceuil</a></li>
     <li><a href="#patient">Patients</a></li>
     <li><a href="#medecin">Medecins</a></li>
-    <li><a href="#Rende-vous">Rendez-vous</a></li>
+    <li><a href="#rv">Rendez-vous</a></li>
     <li style="float:right"><a href="../deconnexion.php">Deconnexion</a></li>
 </ul>
 
@@ -45,14 +45,15 @@ if ($_SESSION['role']!=2){
 
 </div>
     <div class="action"> 
-            <div class="blocgauche">
+            
                         <div id="patient" class="gauche">
                                 <h1>Patients</h1>
                                 <p><i class='fas fa-user-friends' style='font-size:48px;color:red'></i></p>
                                 <li><a href="#Rende-vous">consulter</a></li>
                         </div>
-                        <div class= "milieu">
+                        <div id="rv" class= "milieu">
                                 <h1>Rendez-vous</h1>
+                                <a href="#Rende-vous">consulter</a>
                                 <p> <i class='far fa-calendar-alt' style='font-size:50px;color:red;position:center'></i></p>
                         </div>
 
@@ -62,9 +63,9 @@ if ($_SESSION['role']!=2){
                         </div>
                         
                 
-        </div>
         
-        </div>
+        
+        
         </div>
 <!--tableau-->
         <table>

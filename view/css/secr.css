@@ -1,3 +1,4 @@
+
 body {margin:0;font-family:Arial}
 
     ul {
@@ -70,6 +71,7 @@ body {
 .action{
 display: flex;
 justify-content: space-between;
+padding: 30px;
 
 }
 .milieu{
